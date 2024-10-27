@@ -24,6 +24,19 @@ paths:
     get:
       summary: Get a list of the most recent repositories created on GitHub
       description: Fetches repository details such as name, owner, license, and language breakdown.
+      parameters:
+        - in: query
+          name: language
+          schema:
+            type: string
+          description: Filter by programming language
+          example: html
+        - in: query
+          name: license
+          schema:
+            type: string
+          description: Filter by license type
+          example: apache-2.0
       responses:
         '200':
           description: Repository information
